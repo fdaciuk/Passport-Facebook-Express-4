@@ -1,0 +1,14 @@
+{
+  "name": "passport-facebook-express4",
+  "version": "0.0.1",
+  "description": "Auth with Passport Facebook and Express 4",
+  "author": "Fernando Daciuk",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "^4.5.0",
+    "express-session": "^1.6.3",
+    "passport": "^0.2.0",
+    "passport-facebook": "^1.0.3"
+  }
+}
