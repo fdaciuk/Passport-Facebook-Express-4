@@ -1,5 +1,15 @@
 # Boilerplate to authenticate Passport Facebook + Express 4
 
+## Installation
+
+Clone this repository and run:
+
+```sh
+npm i
+```
+
+## Usage
+
 Rename `config/auth_example.js` file to `config/auth.js` and fill `clientID` and `clientSecret` of your Facebook App.
 
 ## Validating if user is logged in
