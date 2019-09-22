@@ -1,21 +1,23 @@
 'use strict'
 
-var FacebookStrategy = require('passport-facebook').Strategy
-var ControllerUser = require('../app/controllers/user')
-var configAuth = require('./auth')
+const FacebookStrategy = require('passport-facebook').Strategy
+const ControllerUser = require('../app/controllers/user')
+const configAuth = require('./auth')
 
-exports = module.exports = function (passport) {
-  passport.serializeUser(function (user, done) {
+module.exports = (passport) => {
+  passport.serializeUser((user, done) => {
     done(null, user.id)
   })
 
-  passport.deserializeUser(function (id, done) {
+  passport.deserializeUser((id, done) => {
     done(null, id)
   })
 
-  passport.use('facebook',
+  passport.use(
+    'facebook',
     new FacebookStrategy(
       configAuth.facebookAuth,
       ControllerUser.validateFacebookUser
-    ))
+    )
+  )
 }

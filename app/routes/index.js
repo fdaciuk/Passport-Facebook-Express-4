@@ -1,9 +1,9 @@
 'use strict'
 
-var mainRoutes = require('./main-routes')
-var userRoutes = require('./user-routes')
+const mainRoutes = require('./main-routes')
+const userRoutes = require('./user-routes')
 
-exports = module.exports = function (router, passport) {
+module.exports = (router, passport) => {
   // Project Routes
   router.get('/', mainRoutes.index)
   router.get('/profile', userRoutes.profile)

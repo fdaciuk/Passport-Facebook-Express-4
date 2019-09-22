@@ -1,6 +1,6 @@
 'use strict'
 
-exports = module.exports = {
+module.exports = {
   facebookAuth: {
     clientID: 'CLIENT_ID',
     clientSecret: 'CLIENT_SECRET',

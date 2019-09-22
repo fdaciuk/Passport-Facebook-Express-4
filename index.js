@@ -1,12 +1,12 @@
 'use strict'
 
-var express = require('express')
-var session = require('express-session')
-var passport = require('passport')
+const express = require('express')
+const session = require('express-session')
+const passport = require('passport')
 
-var router = express.Router()
-var app = express()
-var port = process.env.PORT || 8080
+const router = express.Router()
+const app = express()
+const port = process.env.PORT || 8080
 
 require('./config/passport')(passport)
 require('./app/routes')(router, passport)
@@ -18,7 +18,7 @@ app.use(session({
 }))
 app.use(passport.initialize())
 app.use(passport.session())
-app.use(express.static(__dirname + '/public'))
+app.use(express.static(`${__dirname}/public`))
 app.use('/', router)
 
 app.listen(port)
