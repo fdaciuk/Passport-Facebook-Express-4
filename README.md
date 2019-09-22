@@ -38,7 +38,7 @@ to:
 router.get( '/profile', userRoutes.isLoggedIn, userRoutes.profile );
 ```
 
-Than, just run:
+Then, just run:
 
 ```
 npm start
