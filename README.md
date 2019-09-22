@@ -14,28 +14,28 @@ Rename `config/auth_example.js` file to `config/auth.js` and fill `clientID` and
 
 ## Validating if user is logged in
 
-Add the following method in `app/routes/user-routes.js` (just below `$public.profile`):
+Add the following method in `app/routes/user-routes.js` (just below `exports.profile`):
 
 ```js
-$public.isLoggedIn = function( req, res, next ) {
-  if( req.isAuthenticated() ) {
-    return next();
+exports.isLoggedIn = (req, res, next) => {
+  if(req.isAuthenticated()) {
+    return next()
   }
 
-  res.redirect( '/' );
+  res.redirect('/')
 }
 ```
 
 On `app/routes/index.js` file, change the following line from:
 
 ```js
-router.get( '/profile', userRoutes.profile );
+router.get('/profile', userRoutes.profile)
 ```
 
 to:
 
 ```js
-router.get( '/profile', userRoutes.isLoggedIn, userRoutes.profile );
+router.get('/profile', userRoutes.isLoggedIn, userRoutes.profile)
 ```
 
 Then, just run:
