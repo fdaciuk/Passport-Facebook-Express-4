@@ -16,7 +16,7 @@ Rename `config/auth_example.js` file to `config/auth.js` and fill `clientID` and
 
 Add the following method in `app/routes/user-routes.js` (just below `$public.profile`):
 
-```javascript
+```js
 $public.isLoggedIn = function( req, res, next ) {
   if( req.isAuthenticated() ) {
     return next();
@@ -28,14 +28,20 @@ $public.isLoggedIn = function( req, res, next ) {
 
 On `app/routes/index.js` file, change the following line from:
 
-```javascript
+```js
 router.get( '/profile', userRoutes.profile );
 ```
 
 to:
 
-```javascript
+```js
 router.get( '/profile', userRoutes.isLoggedIn, userRoutes.profile );
+```
+
+Than, just run:
+
+```
+npm start
 ```
 
 Enjoy! ;)

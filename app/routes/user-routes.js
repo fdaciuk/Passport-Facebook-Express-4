@@ -1,30 +1,30 @@
-'use strict';
+'use strict'
 
-var passport = require( 'passport' );
+var passport = require('passport')
 
-var UserRoutes = function() {
-    var $public = {};
-    var $private = {};
+var UserRoutes = function () {
+  var $public = {}
+  var $private = {}
 
-    $public.profile = function( req, res ) {
-        res.render( 'profile.ejs', {
-            user: req.user
-        });
-    };
+  $public.profile = function (req, res) {
+    res.render('profile.ejs', {
+      user: req.user
+    })
+  }
 
-    $public.logout = function( req, res ) {
-        req.logout();
-        res.redirect( '/' );
-    };
+  $public.logout = function (req, res) {
+    req.logout()
+    res.redirect('/')
+  }
 
-    $public.authFacebook = passport.authenticate( 'facebook', { scope : 'email' });
+  $public.authFacebook = passport.authenticate('facebook', { scope: 'email' })
 
-    $public.authCallbackFacebook = passport.authenticate( 'facebook', {
-        successRedirect : '/profile',
-        failureRedirect : '/'
-    });
+  $public.authCallbackFacebook = passport.authenticate('facebook', {
+    successRedirect: '/profile',
+    failureRedirect: '/'
+  })
 
-    return $public;
-};
+  return $public
+}
 
-exports = module.exports = UserRoutes();
+exports = module.exports = UserRoutes()

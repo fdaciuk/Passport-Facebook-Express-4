@@ -1,9 +1,9 @@
-'use strict';
+'use strict'
 
 exports = module.exports = {
-    facebookAuth : {
-        clientID: 'CLIENT_ID',
-        clientSecret: 'CLIENT_SECRET',
-        callbackURL: '/auth/facebook/callback'
-    }
-};
+  facebookAuth: {
+    clientID: 'CLIENT_ID',
+    clientSecret: 'CLIENT_SECRET',
+    callbackURL: '/auth/facebook/callback'
+  }
+}
