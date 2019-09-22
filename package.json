@@ -7,7 +7,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "lint:fix": "standard --fix"
+    "lint": "standard --verbose | snazzy",
+    "lint:fix": "standard --fix | snazzy"
   },
   "dependencies": {
     "ejs": "2.7.1",
@@ -17,6 +18,7 @@
     "passport-facebook": "3.0.0"
   },
   "devDependencies": {
+    "snazzy": "8.0.0",
     "standard": "14.3.1"
   }
 }
